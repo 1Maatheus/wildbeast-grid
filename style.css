@@ -18,6 +18,12 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
 /* Início do grid */
 .estrutura {
   display: grid;
@@ -95,11 +101,29 @@ a {
   grid-area: content;
 }
 /* Fim conteúdo central */
+
+/* Início anúncios */
 .anuncios {
   grid-area: anuncios;
+  background: #fafbfc;
+  display: grid;
+  align-content: start;
+  padding: 30px;
+  gap: 30px;
 }
+/* Fim anúncios */
 
+/* Início footer */
 .footer {
   grid-area: footer;
+  background: linear-gradient(135deg, #8844ee, #b07dfd);
 }
+
+.footer p {
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+}
+/* Fim footer */
+
 /* Fim do grid */
