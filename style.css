@@ -21,6 +21,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -118,10 +119,6 @@ img {
 
 .imagem-2 {
   align-items: end;
-}
-
-.imagem-3 {
-  width: 100%;
 }
 
 .informacoes p + p {
