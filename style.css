@@ -78,11 +78,12 @@ img {
   grid-area: sidenav;
   background: #fafbfc;
   padding: 30px;
+  position: relative;
 }
 
 .sidenav li a {
   display: block;
-  min-width: 60px;
+  min-width: 70px;
   max-width: 100px;
   margin: 0 auto 30px auto;
   background: #fff;
@@ -95,6 +96,7 @@ img {
 .sidenav li a:hover {
   background: #b07dfd;
 }
+
 /* Fim sidenav */
 
 /* Início do conteúdo central */
@@ -229,6 +231,7 @@ p {
   align-content: start;
   padding: 30px;
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 /* Fim anúncios */
 
@@ -258,6 +261,15 @@ p {
   }
 }
 
+@keyframes seta {
+  from {
+    right: 20px;
+  }
+  to {
+    right: 10px;
+  }
+}
+
 @media (max-width: 760px) {
   .estrutura {
     grid-template-columns: 100%;
@@ -267,6 +279,55 @@ p {
       "content"
       "anuncios"
       "footer";
+  }
+
+  .header {
+    grid-template-columns: auto;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .header nav a {
+    font-size: 1em;
+  }
+
+  .header li + li {
+    margin-left: 10px;
+  }
+
+  .sidenav {
+    padding: 0 30px;
+    overflow-x: auto;
+  }
+
+  .sidenav::after {
+    content: "→";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, 0.3);
+    animation: seta 0.5s ease-in 0s infinite alternate;
+  }
+
+  .sidenav ul {
+    display: flex;
+  }
+
+  .sidenav ul li {
+    flex: 1 0 60px;
+  }
+
+  .sidenav li a {
+    margin: 30px 30px 30px 0;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
   }
 }
 /* Fim media queries */
